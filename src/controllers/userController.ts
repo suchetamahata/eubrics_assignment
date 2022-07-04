@@ -8,7 +8,7 @@ export const userSignIn = async (req: Request, res: Response) => {
     const oldUser = await users.findOne({ username: req.body.username })
     if (oldUser === undefined || oldUser === null) {
         try {
-            const salt = await bcrypt.genSalt()
+            const salt = await bcrypt.genSalt() 
             const hashedPassword = await bcrypt.hash(req.body.password, salt)
             const NewUser = new users({
                 username: req.body.username,
@@ -20,7 +20,7 @@ export const userSignIn = async (req: Request, res: Response) => {
                 PhysicalAppearance:[],
             })
             await NewUser.save()
-            res.send(NewUser).status(200)
+            res.send({message: "new user created"}).status(200)
         } catch (error) {
             console.error(error)
             res.status(500)
@@ -34,7 +34,7 @@ export const userLogin = async (req: Request, res: Response) => {
 
     const oldUser = await users.findOne({ username: req.body.username })
     if (oldUser === undefined || oldUser === null) {
-        res.status(400).send({ message: "user does not exist, please log in" })
+        res.status(400).send({ message: "user does not exist, please register" })
     } else {
         try {
             if (await bcrypt.compare(req.body.password, oldUser.password)) {

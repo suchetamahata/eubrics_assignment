@@ -3,6 +3,6 @@ import { getTasks, createTasks, deleteTasks } from "../controllers/taskControlle
 
 export const taskRouter: Router = Router()
 
-taskRouter.get('/', getTasks)
-taskRouter.post('/', createTasks)
+taskRouter.post('/', getTasks)
+taskRouter.post('/create', createTasks)
 taskRouter.delete('/', deleteTasks)

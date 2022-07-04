@@ -11,7 +11,7 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 app.use('/', userRouter)
-app.use('/get-behaviours',authentication, nameRouter)
+app.use('/get-behaviours', nameRouter)
 app.use('/task',authentication, taskRouter )
 
 app.listen(4040, ()=> console.log("app listening on port 4040"))

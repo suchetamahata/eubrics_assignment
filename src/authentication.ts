@@ -9,19 +9,18 @@ export const authentication = async (req: Request, res: Response, next: NextFunc
         const authHeader = req.headers['authorization']
         const token = authHeader 
         //const token = authHeader && authHeader?.split(' ')[1]
-        //console.log(authHeader)
         if (token == null) {
             res.sendStatus(401)
         } else {
             jwt.verify(token, secret, (err, username) => {
-                if (err) return res.sendStatus(403)
+                if (err) return res.send({message : " not authorized"})
                 if(username)  req.body.user = username
                 next();
             })
         }
     } catch (error) {
         if (error instanceof jwt.JsonWebTokenError) {
-            res.status(500).send(error.message)
+            res.status(500).send({message : "server error"})
             console.log(error.name, error.message)
         }
     }
