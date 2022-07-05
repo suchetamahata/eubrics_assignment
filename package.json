@@ -4,9 +4,9 @@
   "description": "backend of eubricks_client",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node src/app.ts",
+    "start": "ts-node src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/app.ts"
+    "dev": "nodemon src/index.ts"
   },
   "author": "sucheta mahata",
   "license": "ISC",
