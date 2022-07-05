@@ -17,7 +17,7 @@ app.use('/task', authentication, taskRouter)
 app.use(express.static(path.join(__dirname, './build')))
 
 
-app.listen(10000, () => console.log("app listening on port 4040"))
+app.listen(process.env.PORT, () => console.log("app listening "))
 
 mongoose.connect("mongodb+srv://sucheta:moonstar*@cluster0.uolwybx.mongodb.net/eubrics_data?retryWrites=true&w=majority" || '', (err: any) => {
   if (err) {
