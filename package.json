@@ -4,7 +4,7 @@
   "description": "backend of eubricks_client",
   "main": "index.js",
   "scripts": {
-    "start": "node src/app.js",
+    "start": "ts-node src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/index.ts"
   },
@@ -18,13 +18,14 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.4.2",
     "ts-node": "^10.8.2",
-    "node": "16.13.0"
+    "node": "16.13.0",
+    "typescript": "^4.7.4",
+    "tsc": "^2.0.3"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",
     "@types/cors": "^2.8.12",
     "@types/jsonwebtoken": "^8.5.8",
-    "nodemon": "^2.0.18",
-    "typescript": "^4.7.4"
+    "nodemon": "^2.0.18"
   }
 }
