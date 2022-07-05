@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/index.ts",
+    "dev": "nodemon src/index.ts"
   },
   "author": "sucheta mahata",
   "license": "ISC",
