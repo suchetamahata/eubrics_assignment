@@ -21,7 +21,7 @@ app.listen(10000, () => console.log("app listening on port 4040"))
 
 mongoose.connect("mongodb+srv://sucheta:moonstar*@cluster0.uolwybx.mongodb.net/eubrics_data?retryWrites=true&w=majority" || '', (err: any) => {
   if (err) {
-    console.log('Cant connect db')
+    console.log('Cant connect to db')
   } else {
     console.log('Connected to db')
   }
